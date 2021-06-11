@@ -1,10 +1,13 @@
 <script>
-	import Header from '../components/Header.svelte';
+	import "../app.postcss";
+    import Header from '../components/Header.svelte';
 
 </script>
 
-<Header />
+<Header>
 
 <main>
-	<slot />
-</main>
+	<slot>
+</slot></main>
+</Header>
+<slot></slot>
