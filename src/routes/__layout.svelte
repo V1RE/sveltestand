@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="grid grid-rows-[auto,1fr,auto] min-h-screen">
+<div class="grid grid-rows-[auto,1fr,auto] min-h-screen bg-gray-50">
 	<Header />
 	<main>
 		<slot />
