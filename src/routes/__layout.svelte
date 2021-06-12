@@ -1,13 +1,12 @@
 <script>
-	import "../app.postcss";
-    import Header from '../components/Header.svelte';
+	import '../app.postcss';
+	import Header from '../components/Header.svelte';
 
 </script>
 
-<Header>
-
-<main>
-	<slot>
-</slot></main>
-</Header>
-<slot></slot>
+<div class="grid grid-rows-[auto,1fr,auto] min-h-screen">
+	<Header />
+	<main>
+		<slot />
+	</main>
+</div>
