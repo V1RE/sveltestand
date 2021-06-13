@@ -1,16 +1,13 @@
 <script>
-	import Logo from './Logo.svelte';
 	import NavBar from './NavBar.svelte';
 
-	let scrollY = 0;
-
-	$: scrolled = scrollY >= 300;
+	let scrollY: number;
 
 </script>
 
 <svelte:window bind:scrollY />
 
-<header class="header" class:header--scrolled={scrolled}>
+<header class="header" class:header--scrolled={scrollY >= 300}>
 	<div class="wrapper">
 		<NavBar />
 	</div>

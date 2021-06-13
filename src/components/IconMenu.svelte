@@ -1,13 +1,13 @@
 <script>
-	import { faBell } from '@fortawesome/pro-regular-svg-icons';
+	import { faBars, faBell, faUser } from '@fortawesome/pro-regular-svg-icons';
 	import Icon from './Icon.svelte';
 
 </script>
 
 <ul class="icons">
-	<li>
-		<Icon icon={faBell} />
-	</li>
+	<Icon icon={faBell} />
+	<Icon icon={faUser} />
+	<Icon icon={faBars} />
 </ul>
 
 <style>
@@ -15,6 +15,11 @@
 		grid-area: icons;
 
 		@apply text-lg;
+		@apply grid;
+		@apply grid-flow-col;
+		@apply gap-4;
+		@apply md:gap-6;
+		@apply lg:gap-12;
 	}
 
 </style>

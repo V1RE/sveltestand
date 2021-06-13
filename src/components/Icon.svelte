@@ -6,9 +6,11 @@
 
 </script>
 
-<a href="/" class="icon">
-	<Fa {icon} />
-</a>
+<li>
+	<a href="/" class="icon">
+		<Fa {icon} />
+	</a>
+</li>
 
 <style>
 	.icon {
@@ -16,6 +18,8 @@
 		@apply justify-center;
 		@apply items-center;
 		@apply p-1;
+		@apply hover:text-seagreen;
+		@apply focus-visible:text-seagreen;
 	}
 
 </style>
