@@ -1,10 +1,12 @@
 <script>
 	import Branding from './Branding.svelte';
+	import IconMenu from './IconMenu.svelte';
 
 </script>
 
 <nav class="layout">
 	<Branding />
+	<IconMenu />
 </nav>
 
 <style>
