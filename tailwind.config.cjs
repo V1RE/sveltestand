@@ -2,6 +2,10 @@ module.exports = {
 	mode: 'jit',
 	purge: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		container: {
+      padding: '1rem',
+      center: true,
+		},
 		extend: {
 			colors: {
 				seagreen: {

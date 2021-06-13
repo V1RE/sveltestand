@@ -30,8 +30,7 @@
 
 	.wrapper {
 		@apply container;
-		@apply mx-auto;
-		@apply p-4;
+		@apply py-4;
 		@apply md:py-8;
 	}
 
