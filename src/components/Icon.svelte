@@ -3,13 +3,20 @@
 	import Fa from 'svelte-fa';
 
 	export let icon: IconDefinition;
+	export let href = '';
 
 </script>
 
 <li>
-	<a href="/" class="icon">
-		<Fa {icon} />
-	</a>
+	{#if href}
+		<a {href} class="icon">
+			<Fa {icon} />
+		</a>
+	{:else}
+		<button on:click class="icon">
+			<Fa {icon} />
+		</button>
+	{/if}
 </li>
 
 <style>
