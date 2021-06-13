@@ -6,21 +6,16 @@
 
 </script>
 
-<a href="/">
-	<div class="square">
-		<Fa {icon} />
-	</div>
+<a href="/" class="icon">
+	<Fa {icon} />
 </a>
 
 <style>
-	a {
+	.icon {
 		@apply flex;
 		@apply justify-center;
 		@apply items-center;
 		@apply p-1;
-	}
-
-	.square {
 	}
 
 </style>
