@@ -10,7 +10,7 @@
 </script>
 
 <div class="container my-8">
-	<div class="signup">
+	<section class="auth">
 		<div class="logo" />
 		<ul class="providers">
 			<Icon icon={faGoogle} on:click={signInGoogle} />
@@ -18,5 +18,22 @@
 		<div class="form">
 			<slot />
 		</div>
-	</div>
+	</section>
 </div>
+
+<style>
+	.auth {
+		@apply max-w-sm;
+		@apply flex;
+		@apply mx-auto;
+		@apply flex-col;
+	}
+
+	.form {
+		@apply rounded-lg;
+		@apply border-seagreen;
+		@apply border-2;
+		@apply p-8;
+	}
+
+</style>
