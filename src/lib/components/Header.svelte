@@ -1,5 +1,5 @@
 <script>
-	import NavBar from './NavBar.svelte';
+	import NavBar from '$lib/components/NavBar.svelte';
 
 	let scrollY: number;
 

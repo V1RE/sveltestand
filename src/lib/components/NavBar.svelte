@@ -1,6 +1,6 @@
 <script>
-	import Branding from './Branding.svelte';
-	import IconMenu from './IconMenu.svelte';
+	import Branding from '$lib/components/Branding.svelte';
+	import IconMenu from '$lib/components/IconMenu.svelte';
 
 </script>
 

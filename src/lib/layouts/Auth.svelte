@@ -1,6 +1,6 @@
 <script>
 	import supabase from '$lib/db';
-	import Icon from '../components/Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 	const signInGoogle = async () => {

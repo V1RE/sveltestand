@@ -1,6 +1,6 @@
 <script>
 	import '../app.postcss';
-	import Header from '../components/Header.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import supabase from '$lib/db';
 	import { session } from '$app/stores';
 	import { browser } from '$app/env';

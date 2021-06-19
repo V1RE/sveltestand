@@ -1,6 +1,6 @@
 <script>
 	import supabase from '$lib/db';
-	import Auth from '../../layouts/Auth.svelte';
+	import Auth from '$lib/layouts/Auth.svelte';
 	import { goto } from '$app/navigation';
 
 	let email: string;

@@ -1,13 +1,6 @@
 <script>
-	import Post from './Post.svelte';
-	let posts = [
-		{
-			content: 'Dit is een test'
-		},
-		{
-			content: 'Nog een test'
-		}
-	];
+	import Post from '$lib/components/Post.svelte';
+	export let posts;
 
 </script>
 
@@ -22,6 +15,7 @@
 		@apply grid;
 		@apply grid-flow-row;
 		@apply gap-8;
+		@apply py-6;
 	}
 
 </style>

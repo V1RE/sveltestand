@@ -1,6 +1,6 @@
 <script>
 	import { faBars, faBell, faUser } from '@fortawesome/pro-regular-svg-icons';
-	import Icon from './Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 </script>
 
