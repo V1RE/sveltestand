@@ -31,7 +31,6 @@
 		if (!checked) {
 			e.preventDefault();
 			checkbox.focus();
-			console.log(e);
 		}
 	};
 
@@ -54,14 +53,14 @@
 		</label>
 		<label class="accept mb-6">
 			<input type="checkbox" name="accept" class="check" bind:this={checkbox} bind:checked />
-			<span
-				>Ik ga accoord met de
+			<span>
+				Ik ga accoord met de
 				<a href="https://google.com/" target="_blank" class="privacy">privacy voorwaarden</a>
 			</span>
 		</label>
-		<button class="submit" class:isDisabled={!checked} on:click={btnClick}
-			>Wachtwoord bevestigen</button
-		>
+		<button class="submit" class:isDisabled={!checked} on:click={btnClick}>
+			<span class="submitText">Wachtwoord bevestigen</span>
+		</button>
 	</form>
 </Auth>
 
