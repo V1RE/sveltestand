@@ -1,7 +1,22 @@
+<script context="module">
+	import type { Load } from '@sveltejs/kit';
+
+	const load: Load = async ({ session }) => {
+		if (session.user) {
+			return { redirect: '/', status: 302 };
+		}
+		return {};
+	};
+
+	export { load };
+
+</script>
+
 <script>
-	import supabase from '$lib/db';
+	import { session } from '$app/stores';
 	import Auth from '$lib/layouts/Auth.svelte';
 	import { goto } from '$app/navigation';
+	import { post } from '$lib/utils';
 
 	let email: string;
 	let password: string;
@@ -11,18 +26,13 @@
 
 	const signUp = async () => {
 		if (checked) {
-			try {
-				const { error } = await supabase.auth.signUp({
-					email,
-					password
-				});
-				if (error) {
-					throw error;
-				} else {
+			const response = await post(`auth/register`, { email, password });
+			// TODO handle network errors
+			if (response.user) {
+				$session.user = response.user;
+				setTimeout(() => {
 					goto('/');
-				}
-			} catch (error) {
-				console.error(error);
+				});
 			}
 		}
 	};
@@ -40,7 +50,13 @@
 	<form on:submit|preventDefault={signUp} class="form">
 		<label class="inputfield mb-4">
 			<span>E-mailadres</span>
-			<input type="email" class="input" bind:value={email} placeholder="john.doe@email.com" />
+			<input
+				type="email"
+				required
+				class="input"
+				bind:value={email}
+				placeholder="john.doe@email.com"
+			/>
 		</label>
 		<label class="inputfield mb-8">
 			<span>Wachtwoord</span>
@@ -49,10 +65,18 @@
 				class="input"
 				bind:value={password}
 				placeholder="Minstens 6 characters"
+				required
 			/>
 		</label>
 		<label class="accept mb-6">
-			<input type="checkbox" name="accept" class="check" bind:this={checkbox} bind:checked />
+			<input
+				type="checkbox"
+				required
+				name="accept"
+				class="check"
+				bind:this={checkbox}
+				bind:checked
+			/>
 			<span>
 				Ik ga accoord met de
 				<a href="https://google.com/" target="_blank" class="privacy">privacy voorwaarden</a>

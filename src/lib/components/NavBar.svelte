@@ -1,4 +1,5 @@
 <script>
+	import { session } from '$app/stores';
 	import Branding from '$lib/components/Branding.svelte';
 	import IconMenu from '$lib/components/IconMenu.svelte';
 
@@ -6,7 +7,9 @@
 
 <nav class="layout">
 	<Branding />
-	<IconMenu />
+	{#if $session.user}
+		<IconMenu />
+	{/if}
 </nav>
 
 <style>

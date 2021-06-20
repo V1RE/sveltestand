@@ -6,7 +6,7 @@
 
 <ul class="icons">
 	<Icon icon={faBell} />
-	<Icon icon={faUser} href="/signup" />
+	<Icon icon={faUser} href="/register" />
 	<Icon icon={faBars} />
 </ul>
 

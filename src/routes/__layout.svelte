@@ -1,16 +1,21 @@
+<script context="module">
+	import type { Load } from '@sveltejs/kit';
+
+	const load: Load = async ({ session, page }) => {
+		if (!session.user && page.path !== '/register') {
+			return { redirect: '/register', status: 302 };
+		}
+		return {};
+	};
+
+	export { load };
+
+</script>
+
 <script>
 	import '../app.postcss';
 	import Header from '$lib/components/Header.svelte';
-	import supabase from '$lib/db';
 	import { session } from '$app/stores';
-	import { browser } from '$app/env';
-
-	if (browser) {
-		session.set(supabase.auth.session());
-		supabase.auth.onAuthStateChange((_, supabaseSession) => {
-			session.set(supabaseSession);
-		});
-	}
 
 </script>
 

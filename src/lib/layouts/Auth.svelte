@@ -9,7 +9,7 @@
 
 </script>
 
-<div class="container my-8">
+<div class="container">
 	<section class="auth">
 		<div class="logo" />
 		<ul class="providers">
@@ -25,8 +25,9 @@
 	.auth {
 		@apply max-w-sm;
 		@apply flex;
-		@apply mx-auto;
 		@apply flex-col;
+		@apply mx-auto;
+		@apply mt-16;
 	}
 
 	.form {
