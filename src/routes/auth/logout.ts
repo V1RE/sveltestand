@@ -1,6 +1,7 @@
 import supabase from '$lib/db';
+import type { RequestHandler } from '@sveltejs/kit';
 
-const get = async () => {
+const get: RequestHandler = async () => {
 	const { error } = await supabase.auth.signOut();
 
 	if (error) {

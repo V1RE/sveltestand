@@ -6,7 +6,7 @@ import supabase from '$lib/db';
 const post: RequestHandler = async (request: Request) => {
 	const { email, password } = request.body;
 
-	const body = await supabase.auth.signUp({ email, password });
+	const body = await supabase.auth.signIn({ email, password });
 
 	return respond(body);
 };
