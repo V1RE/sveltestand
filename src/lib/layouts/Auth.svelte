@@ -1,10 +1,19 @@
 <script>
-	import supabase from '$lib/db';
 	import Icon from '$lib/components/Icon.svelte';
 	import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+	import { post } from '$lib/utils';
+	import { session } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	const signInGoogle = async () => {
-		await supabase.auth.signIn({ provider: 'google' });
+		const response = await post(`auth/social`, {});
+		// TODO handle network errors
+		if (response.user) {
+			$session.user = response.user;
+			setTimeout(() => {
+				goto('/');
+			});
+		}
 	};
 
 </script>
